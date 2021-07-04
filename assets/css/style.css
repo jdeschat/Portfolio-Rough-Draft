@@ -1,20 +1,4 @@
  
-/* Colours  */
-:root {
-    --primary-color: #FFFFFF;
-    --secondary-color: #5555FF;
-    --tertiary-color: #1f1e1e;
-}
-/* Colours end  */
-
-
-
-.container{
-    height: '100%';
-    width: '100%';
-    background-color: 'red' ;
-}
-
 *{
     margin: 0;
     padding: 0;
@@ -23,8 +7,17 @@
 
 body {
     color: var(--tertiary-color);
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Otomanopee One', sans-serif;
 }
+
+/* Colours  */
+:root {
+    --primary-color: #FFFFFF;
+    --secondary-color: #5555FF;
+    --tertiary-color: #1f1e1e;
+}
+/* Colours end  */
+
 
 /* Header / Nav bar styles start */
 header {
@@ -45,13 +38,12 @@ header h1 {
     color: var(--primary-color);
     margin: 0;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    /* this didnt work */
-    border: 1px var(--secondary-color);
 }
 
 header a{
     text-decoration: none; /* <!-- this removed the link underlines --> */
     color: var(--primary-color);
+    background-color: 1px var(--secondary-color);
 }
 
 header a:hover {
@@ -85,17 +77,12 @@ header nav ul li a:hover {
     text-shadow: none;
     text-decoration: none;
 }
-
-
-
-
 /* Header / Nav bar styles end */
 
 /* Style all section tags */
 section{
     padding: 20px;
 }
-
 
 /* Section title styles start */
 .section-title {
@@ -112,7 +99,12 @@ section{
 .secondary-border {
     border-color: var(--tertiary-color);
 }
-/* Section title styles start */
+
+.column-left {
+    border-right: solid #5555FF;
+    background-color: 'blue';
+}
+/* Section title styles end */
 
 /* hero styles start  */
 .hero{
@@ -126,8 +118,6 @@ section{
     align-items: flex-start;
 }
 
-/* try to delete some duplication with .hero-cta h2 */
-/* try to align text right */
 .hero-cta {
     width: 35%;
     text-align: right;
@@ -146,7 +136,9 @@ section{
     text-align: center;
     justify-content: flex-end;
 }
+/* Hero styles end */
 
+/* row styles start */
 .row {
     display: flex;
     width: 100%;
@@ -162,10 +154,13 @@ section{
     text-align: center;
 }
 
+/* row styles end */
 
+/* About me section styles start */
 .about-me {
     display: flex;
     flex-direction: row;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 
@@ -175,12 +170,18 @@ section{
 }
 
 .profile img {
-    width: 200px;
+    width: 300px;
+    height: 300px;
     padding-right: 20px;
 }
-/* ABOUT ME STYLES END */
 
-/* My Work  */
+.responsive {
+    width: 100%;
+    height: auto;
+}
+/* About me section styles end */
+
+/* My Work section start  */
 .top-images {
     display: flex;
     background-size: cover;
@@ -209,18 +210,17 @@ li {
 }
 .top-images ul > li > a > img {
     width: 300px;
+    height: 200px;
     overflow: hidden;
 }
 
 .top-images ul > li > a > img:hover {
     width: 310px;
+    height: 207px;
 }
+/* My Work section end  */
 
-
-.column-left {
-    border-right: solid #5555FF;
-    background-color: 'blue';
-}
+/* Contact me section start */
 
 .contact{
     display: flex;
@@ -234,9 +234,6 @@ li {
     justify-content: center;
 }
 
-/* my work end  */
-
-/* Contact me  */
 /* Style all font awesome icons */
 .fa {
     padding: 20px;
@@ -250,8 +247,6 @@ li {
   .fa:hover {
     opacity: 0.7;
   }
-  
-  /* Set a specific color for each brand */
   
   /* round buttons  */
   .fa {
@@ -292,7 +287,11 @@ li {
       color: white;
   }
 
+/* Contact me section end */
 
+
+
+/* MEDIA QUERIES */
  /* Smaller devices (800px and down) */
 @media (max-width: 800px) { 
     /* My Work  */
@@ -339,11 +338,30 @@ li {
         text-align: right;
     }
     
+
+    /* FIX .COLUMN-LEFT AND BEFORE */
     .column-left {
-        border-bottom: solid #5555FF;
+        width: 600px;
+        height  : 70px;   
+        position: relative;
         border-right: none;
         justify-content: center;
-    }
+        padding-bottom: 50px;
+        margin-bottom: 20px;
+        z-index : 1;
+      }
+
+      .column-left:before {
+        display: flex;
+        justify-content: center;
+        content : "";
+        position: absolute;
+        left    : 24%;
+        bottom  : 0;
+        height  : 1px;
+        width   : 50%;  /* or 100px */
+        border-bottom: solid #5555FF;
+      }
     
     .section-title{
         width: unset;
