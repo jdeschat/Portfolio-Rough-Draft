@@ -7,6 +7,14 @@
 }
 /* Colours end  */
 
+
+
+.container{
+    height: '100%';
+    width: '100%';
+    background-color: 'red' ;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -25,8 +33,8 @@ header {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    position: -webkit-sticky;
-    position: sticky;
+    /* position: -webkit-sticky;
+    position: sticky; */
     top: 0;
     z-index: 9999;
 }
@@ -37,11 +45,18 @@ header h1 {
     color: var(--primary-color);
     margin: 0;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* this didnt work */
+    border: 1px var(--secondary-color);
 }
 
 header a{
     text-decoration: none; /* <!-- this removed the link underlines --> */
     color: var(--primary-color);
+}
+
+header a:hover {
+    text-decoration: none;
+    color: var(--secondary-color);
 }
 
 header nav{
@@ -68,7 +83,12 @@ header nav ul li a:hover {
     color: var(--secondary-color);
     border-radius: 15px;
     text-shadow: none;
+    text-decoration: none;
 }
+
+
+
+
 /* Header / Nav bar styles end */
 
 /* Style all section tags */
@@ -80,12 +100,9 @@ section{
 /* Section title styles start */
 .section-title {
     font-size: 48px;
-    border-bottom: 3px solid;
     color: var(--secondary-color);
-    padding-bottom: 20px;
     text-align: center;
-    margin: 0 auto 35px auto;
-    width: 50%;
+    width: 240px
 }
 
 .primary-border {
@@ -130,13 +147,11 @@ section{
     justify-content: flex-end;
 }
 
-
-/* ABOUT ME STYLES START */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
+.row {
+    display: flex;
+    width: 100%;
 }
+
 
 .row p{
     line-height: 1.7;
@@ -146,56 +161,196 @@ section{
     margin: 0 auto;
     text-align: center;
 }
+
+
+.about-me {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.profile{
+    display: flex;
+    justify-content: center;
+}
+
+.profile img {
+    width: 200px;
+    padding-right: 20px;
+}
 /* ABOUT ME STYLES END */
 
-
-
-/* UTILITIES  */
-.text-left {
-    text-align: left;
+/* My Work  */
+.top-images {
+    display: flex;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.text-right {
-    text-align: right;
+.top-images ul {
+    display: flex;
+    overflow: hidden;
+    flex-direction: row;
 }
+
+li {
+    list-style: none;
+    overflow: hidden;
+}
+
+.top-images ul li a {
+    padding: 20px;
+    overflow: hidden;
+}
+
+.top-images ul li span {
+    display: flex;
+    justify-content: center;
+}
+.top-images ul > li > a > img {
+    width: 300px;
+    overflow: hidden;
+}
+
+.top-images ul > li > a > img:hover {
+    width: 310px;
+}
+
 
 .column-left {
-    float: left;
-    width: 20%;
     border-right: solid #5555FF;
+    background-color: 'blue';
 }
 
-.column-right {
-    float: right;
-    width: 80%;
+.contact{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
 }
 
-/* media query  */
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+.contact-buttons{
+    display: flex;
+    justify-content: center;
+}
+
+/* my work end  */
+
+/* Contact me  */
+/* Style all font awesome icons */
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  /* Add a hover effect */
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  /* Set a specific color for each brand */
+  
+  /* round buttons  */
+  .fa {
+      padding: 20px;
+      font-size: 30px;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 50%;
+      margin: 5px 2px;
   }
 
-/* BOOTSTRAP - Responsive Breakpoints  */
- /* Extra small devices (portrait phones, less than 576px) */
- /* No media query for `xs` since this is the default in Bootstrap */
+  .fa:hover {
+      opacity: 0.7;
+      text-decoration: none;
+  }
 
- /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) { 
+  /* Linked in */
+  .fa-linkedin {
+      background: #007bb5;
+      color: white;
+  }
 
- }
+  /* Facebook */
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  /* Twitter */
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
 
- /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) { 
+  /* Instagram */
+  .fa-instagram {
+      background: #125688;
+      color: white;
+  }
 
+
+ /* Smaller devices (800px and down) */
+@media (max-width: 800px) { 
+    /* My Work  */
+    .top-images {
+        display: flex;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .top-images ul {
+        display: flex;
+        overflow: hidden;
+        flex-direction: row;
+    }
+
+    li {
+        list-style: none;
+        overflow: hidden;
+    }
+
+    .top-images ul li a {
+        padding: 20px;
+        overflow: hidden;
+    }
+
+    .top-images ul li span {
+        display: flex;
+        justify-content: center;
+    }
+    .top-images ul > li > a > img {
+        width: 300px;
+        overflow: hidden;
+    }
+
+    .top-images ul > li > a > img:hover {
+        width: 310px;
+    }
+        
+    .text-left {
+        text-align: left;
+    }
+    
+    .text-right {
+        text-align: right;
+    }
+    
+    .column-left {
+        border-bottom: solid #5555FF;
+        border-right: none;
+        justify-content: center;
+    }
+    
+    .section-title{
+        width: unset;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+    
 }
-
- /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) { 
-
- }
-
- /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) { 
-
- }
