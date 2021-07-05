@@ -7,8 +7,8 @@ This portfolio contains ...
 * Links to my work. The first link will bring you to my GitHub page where you can overview all of my work
 * Contact me - where there are multiple methods of communication people can message me at
 
-This is the webpage:
-https://github.com/jdeschat/challenge-module-2/blob/main/assets/img/portfolio.jpg
+This is my portfolio webpage:
+![alt text](https://github.com/jdeschat/challenge-module-2/blob/main/assets/img/portfolio.jpg)
 
 Published at:
 https://jdeschat.github.io/challenge-module-2/
