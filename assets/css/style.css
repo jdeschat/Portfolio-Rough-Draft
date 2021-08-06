@@ -286,10 +286,15 @@ li {
       background: #125688;
       color: white;
   }
-
 /* Contact me section end */
 
-
+/* Resume section start */
+h4 {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+}
+/* Resume section end */
 
 /* MEDIA QUERIES */
  /* Smaller devices (800px and down) */
